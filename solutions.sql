@@ -207,7 +207,7 @@ WHERE (status = 'Shipped' OR status = 'Resolved')
 GROUP BY YEAR(shippedDate)
 ORDER BY total_amount_payment DESC LIMIT 1;
 
--- 45. How much total value did we make on in our most profitable year ever (based on shipping date), considering all shipped & resolved orders?  -> TODO 20119343
+-- 45. How much total value did we make on in our most profitable year ever (based on shipping date), considering all shipped & resolved orders?  -> 4321168
 SELECT ROUND(SUM(quantityOrdered * priceEach)) FROM orderdetails
 LEFT JOIN orders
 ON orderdetails.orderNumber = orders.orderNumber
